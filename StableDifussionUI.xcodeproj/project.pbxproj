@@ -32,6 +32,9 @@
 		D281B4B0293D1A3A005D0F96 /* StableDifussionUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D281B4AF293D1A3A005D0F96 /* StableDifussionUIUITestsLaunchTests.swift */; };
 		D281B4BD293D1ACF005D0F96 /* Text2Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D281B4BC293D1ACF005D0F96 /* Text2Image.swift */; };
 		D2C2BF59293E4DFD00786D8B /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = D2C2BF58293E4DFD00786D8B /* StableDiffusion */; };
+		D2C2BF5C293E50A600786D8B /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = D2C2BF5B293E50A600786D8B /* StableDiffusion */; };
+		D2C2BF5E293E580500786D8B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C2BF5D293E580500786D8B /* Image.swift */; };
+		D2C2BF5F293E580500786D8B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C2BF5D293E580500786D8B /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,7 @@
 		D281B4AD293D1A3A005D0F96 /* StableDifussionUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDifussionUIUITests.swift; sourceTree = "<group>"; };
 		D281B4AF293D1A3A005D0F96 /* StableDifussionUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDifussionUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D281B4BC293D1ACF005D0F96 /* Text2Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text2Image.swift; sourceTree = "<group>"; };
+		D2C2BF5D293E580500786D8B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C2BF5C293E50A600786D8B /* StableDiffusion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,7 @@
 				D281B4A2293D1A3A005D0F96 /* StableDifussionUITests */,
 				D281B4AC293D1A3A005D0F96 /* StableDifussionUIUITests */,
 				D281B48A293D1A39005D0F96 /* Products */,
+				D2C2BF5A293E50A600786D8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,12 +155,11 @@
 			children = (
 				D276EE88293DFB9E005A6DFC /* coreml-stable-diffusion-2-base_split_einsum_compiled */,
 				D281B48C293D1A39005D0F96 /* StableDifussionUIApp.swift */,
-				D281B48E293D1A39005D0F96 /* Persistence.swift */,
 				D281B493293D1A39005D0F96 /* ContentView.swift */,
 				D281B4BC293D1ACF005D0F96 /* Text2Image.swift */,
 				D281B495293D1A3A005D0F96 /* Assets.xcassets */,
 				D281B497293D1A3A005D0F96 /* StableDifussionUI.entitlements */,
-				D281B490293D1A39005D0F96 /* StableDifussionUI.xcdatamodeld */,
+				D2C2BF60293E580700786D8B /* Data */,
 				D281B498293D1A3A005D0F96 /* Preview Content */,
 			);
 			path = StableDifussionUI;
@@ -185,6 +190,23 @@
 			path = StableDifussionUIUITests;
 			sourceTree = "<group>";
 		};
+		D2C2BF5A293E50A600786D8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2C2BF60293E580700786D8B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D281B48E293D1A39005D0F96 /* Persistence.swift */,
+				D281B490293D1A39005D0F96 /* StableDifussionUI.xcdatamodeld */,
+				D2C2BF5D293E580500786D8B /* Image.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +224,7 @@
 			);
 			name = "StableDifussionUI Debug";
 			packageProductDependencies = (
+				D2C2BF5B293E50A600786D8B /* StableDiffusion */,
 			);
 			productName = StableDifussionUI;
 			productReference = D276EEAF293DFFA9005A6DFC /* StableDifussionUI Debug.app */;
@@ -361,6 +384,7 @@
 				D276EE9C293DFFA9005A6DFC /* StableDifussionUIApp.swift in Sources */,
 				D276EE9D293DFFA9005A6DFC /* Text2Image.swift in Sources */,
 				D276EE9E293DFFA9005A6DFC /* ContentView.swift in Sources */,
+				D2C2BF5F293E580500786D8B /* Image.swift in Sources */,
 				D276EE9F293DFFA9005A6DFC /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +397,7 @@
 				D281B48D293D1A39005D0F96 /* StableDifussionUIApp.swift in Sources */,
 				D281B4BD293D1ACF005D0F96 /* Text2Image.swift in Sources */,
 				D281B494293D1A39005D0F96 /* ContentView.swift in Sources */,
+				D2C2BF5E293E580500786D8B /* Image.swift in Sources */,
 				D281B48F293D1A39005D0F96 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,10 +464,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.StableDifussionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -475,10 +501,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.StableDifussionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -620,10 +647,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.StableDifussionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -656,10 +684,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.StableDifussionUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -812,6 +841,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		D2C2BF58293E4DFD00786D8B /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2C2BF57293E4DFD00786D8B /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+		D2C2BF5B293E50A600786D8B /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D2C2BF57293E4DFD00786D8B /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
 			productName = StableDiffusion;

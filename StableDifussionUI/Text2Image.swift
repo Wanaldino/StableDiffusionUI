@@ -37,17 +37,29 @@ struct Text2Image: View {
     @State var progress = 0.0
     @State var isInProgress = false
 
-    init() {
+    init(image: Image? = nil) {
         let url = Bundle.main.resourceURL!
         let configuration = MLModelConfiguration()
         configuration.computeUnits = .cpuAndNeuralEngine
         pipe = try? StableDiffusionPipeline(resourcesAt: url, configuration: configuration, disableSafety: true)
+        if let image {
+            setInfo(from: image)
+        }
+    }
+
+    func setInfo(from image: Image) {
+        if let prompt = image.prompt {
+            self.prompt = prompt
+        }
+        self.seed = String(image.seed)
+        self.guidanceScale = image.guidanceScale
+        self.steps = Double(image.steps)
     }
 
     var body: some View {
         VStack {
             if let image {
-                Image(decorative: image, scale: 1)
+                SwiftUI.Image(decorative: image, scale: 1)
             }
 
             HStack {
