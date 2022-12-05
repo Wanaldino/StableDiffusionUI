@@ -7,10 +7,9 @@
 
 import SwiftUI
 import StableDiffusion
-import CoreML
 
 struct Text2Image: View {
-    let pipe: StableDiffusionPipeline?
+    let pipeline: StableDiffusionPipeline?
 
     //Generated image
     @State var image: CGImage?
@@ -37,11 +36,8 @@ struct Text2Image: View {
     @State var progress = 0.0
     @State var isInProgress = false
 
-    init(image: Image? = nil) {
-        let url = Bundle.main.resourceURL!
-        let configuration = MLModelConfiguration()
-        configuration.computeUnits = .cpuAndNeuralEngine
-        pipe = try? StableDiffusionPipeline(resourcesAt: url, configuration: configuration, disableSafety: true)
+    init(pipeline: StableDiffusionPipeline?, image: Image? = nil) {
+        self.pipeline = pipeline
         if let image {
             setInfo(from: image)
         }
@@ -119,7 +115,7 @@ struct Text2Image: View {
         }
 
         DispatchQueue.global().async {
-            _ = try? pipe?.generateImages(
+            _ = try? pipeline?.generateImages(
                 prompt: prompt,
                 imageCount: Int(imageCount),
                 stepCount: Int(steps),
