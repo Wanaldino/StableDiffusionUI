@@ -30,6 +30,9 @@ struct Text2Image: View {
     let stepsMin = 1.0
     let stepsMax = 50.0
 
+    @State var progress = 0.0
+    @State var isInProgress = false
+
     init() {
         let url = Bundle.main.resourceURL!
         let configuration = MLModelConfiguration()
@@ -46,11 +49,12 @@ struct Text2Image: View {
                 TextField(text: $prompt) {
                     Text("Prompt: a high quality photo of an astronaut riding a dragon in space")
                 }.onSubmit {
+                    guard !isInProgress else { return }
                     generate()
                 }
                 Button("Generate") {
                     generate()
-                }
+                }.disabled(isInProgress)
             }
             Slider(value: $imageCount, in: (imageCountMin ... imageCountMax), step: 1.0) {
                 Text(String(format: "Image count (%.0f)", imageCount)).padding(.all, 8)
@@ -67,7 +71,11 @@ struct Text2Image: View {
                 Text(String(format: "%.0f", stepsMax)).padding(.all, 8)
             }
             TextField("Seed", text: $seed)
-        }
+            ProgressView(value: progress) {
+                let progress = progress * 100
+                Text(String(format: "Progress %.2f%", progress))
+            }
+        }.padding(.all, 16)
     }
 
     func generate() {
@@ -81,17 +89,22 @@ struct Text2Image: View {
             seed = Int(randomSeed)
         }
 
-        image = try? pipe?.generateImages(
-            prompt: prompt,
-            imageCount: Int(imageCount),
-            stepCount: Int(steps),
-            seed: seed,
-            progressHandler: handleProgress
-        ).first!
+        DispatchQueue.global().async {
+            _ = try? pipe?.generateImages(
+                prompt: prompt,
+                imageCount: Int(imageCount),
+                stepCount: Int(steps),
+                seed: seed,
+                progressHandler: handleProgress
+            ).first!
+        }
     }
 
     func handleProgress(progress: StableDiffusionPipeline.Progress) -> Bool {
         print("\(progress.step) / \(progress.stepCount)")
+        isInProgress = progress.step != progress.stepCount
+        self.progress = Double(progress.step) / Double(progress.stepCount)
+        self.image = progress.currentImages.compactMap({ $0 }).last
         return true
     }
 }
