@@ -10,13 +10,13 @@ import StableDiffusion
 import CoreML
 
 struct Text2Image: View {
-    let pipe: StableDiffusionPipeline
+    let pipe: StableDiffusionPipeline?
 
     init() {
         let url = Bundle.main.resourceURL!
         let configuration = MLModelConfiguration()
         configuration.computeUnits = .cpuAndNeuralEngine
-        pipe = try! StableDiffusionPipeline(resourcesAt: url, configuration: configuration, disableSafety: true)
+        pipe = try? StableDiffusionPipeline(resourcesAt: url, configuration: configuration, disableSafety: true)
     }
 
     @State var image: CGImage?
@@ -34,7 +34,7 @@ struct Text2Image: View {
                 Button("Generate") {
                     let seed = UInt32.random(in: (UInt32.min ... UInt32.max))
                     let intSeed = Int(seed)
-                    image = try! pipe.generateImages(
+                    image = try? pipe?.generateImages(
                         prompt: prompt,
                         stepCount: 4,
                         seed: intSeed,
