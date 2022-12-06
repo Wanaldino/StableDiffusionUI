@@ -96,9 +96,11 @@ struct Text2Image: View {
 
             TextField("Seed", text: $seed)
 
-            ProgressView(value: progress) {
-                let progress = progress * 100
-                Text(String(format: "Progress %.2f%", progress))
+            if isInProgress || progress != 1 {
+                ProgressView(value: progress) {
+                    let progress = progress * 100
+                    Text(String(format: "Progress %.2f%", progress))
+                }
             }
         }.padding(.all, 16)
     }
