@@ -17,7 +17,7 @@ extension Image {
         id: UUID = UUID(),
         timestamp: Date = Date(),
         isFinished: Bool = false,
-        image: Data? = nil,
+        image: URL? = nil,
         context: NSManagedObjectContext
     ) {
         self.init(context: context)
