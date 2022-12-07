@@ -3,10 +3,10 @@
     {
       "identity" : "ml-stable-diffusion",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/ml-stable-diffusion",
+      "location" : "https://github.com/Wanaldino/ml-stable-diffusion",
       "state" : {
-        "branch" : "main",
-        "revision" : "583cc04ece3dce9e1e8d44449f58d2eb7edef11c"
+        "branch" : "develop",
+        "revision" : "3eb69b10687de3a96dd5c0ea143a0512b492787d"
       }
     },
     {
