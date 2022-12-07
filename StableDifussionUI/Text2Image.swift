@@ -133,12 +133,11 @@ struct Text2Image: View {
     func generate() {
         guard !prompt.isEmpty else { return }
 
-        let seed: Int
-        if let intSeed = Int(self.seed) {
+        let seed: UInt32
+        if let intSeed = UInt32(self.seed) {
             seed = intSeed
         } else {
-            let randomSeed = UInt32.random(in: (UInt32.min ... UInt32.max))
-            seed = Int(randomSeed)
+            seed = UInt32.random(in: (UInt32.min ... UInt32.max))
         }
 
         DispatchQueue.global().async {
