@@ -3,11 +3,11 @@
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
         <attribute name="guidanceScale" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="image" optional="YES" attributeType="URI"/>
         <attribute name="isFinished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="prompt" optional="YES" attributeType="String"/>
-        <attribute name="seed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="seed" optional="YES" attributeType="String"/>
         <attribute name="steps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
     </entity>
 </model>

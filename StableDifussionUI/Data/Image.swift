@@ -10,25 +10,24 @@ import CoreData
 
 extension Image {
     convenience init(
-        seed: Int16,
+        seed: String,
         prompt: String,
         steps: Int16,
         guidanceScale: Float,
-        id: UUID = UUID(),
+        url: URL?,
+        id: UUID,
         timestamp: Date = Date(),
-        isFinished: Bool = false,
-        image: URL? = nil,
+        isFinished: Bool = true,
         context: NSManagedObjectContext
     ) {
         self.init(context: context)
         self.id = id
-        self.image = image
+        self.url = url
         self.timestamp = timestamp
         self.seed = seed
         self.prompt = prompt
         self.steps = steps
         self.guidanceScale = guidanceScale
         self.isFinished = isFinished
-
     }
 }

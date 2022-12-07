@@ -13,8 +13,9 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Image.timestamp, ascending: true)], animation: .default)
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Image.timestamp, ascending: false)], animation: .default)
     private var items: FetchedResults<Image>
+    var newImage: Image?
 
     let pipeline: StableDiffusionPipeline?
     init() {
@@ -28,7 +29,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink {
-                    Text2Image(pipeline: pipeline)
+                    Text2Image(pipeline: pipeline, save: handleCreation)
                 } label: {
                     Text("Text 2 Image")
                 }
@@ -37,19 +38,29 @@ struct ContentView: View {
                     ForEach(items) { item in
                         NavigationLink {
                             Text2Image(pipeline: pipeline, image: item)
+                                .disabled(true)
                         } label: {
-                            Text(item.timestamp!.description)
+                            ListItem(image: item)
                         }
                     }
                 }
             }
-
-            Text("Select an item")
         }
     }
 
-    func handleCreation() {
-        
+    func handleCreation(prompt: String, seed: String, steps: Int16, guidanceScale: Float, url: URL, id: UUID) {
+        let image = Image(
+            seed: seed,
+            prompt: prompt,
+            steps: steps,
+            guidanceScale: guidanceScale,
+            url: url,
+            id: id,
+            context: viewContext
+        )
+        viewContext.insert(image)
+        guard viewContext.hasChanges else { return }
+        try? viewContext.save()
     }
 }
 

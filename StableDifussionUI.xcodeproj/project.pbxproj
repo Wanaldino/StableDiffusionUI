@@ -35,6 +35,8 @@
 		D2C2BF5C293E50A600786D8B /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = D2C2BF5B293E50A600786D8B /* StableDiffusion */; };
 		D2C2BF5E293E580500786D8B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C2BF5D293E580500786D8B /* Image.swift */; };
 		D2C2BF5F293E580500786D8B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C2BF5D293E580500786D8B /* Image.swift */; };
+		D2C2BF62293FA64C00786D8B /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C2BF61293FA64C00786D8B /* ListItem.swift */; };
+		D2C2BF63293FA64C00786D8B /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C2BF61293FA64C00786D8B /* ListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		D281B4AF293D1A3A005D0F96 /* StableDifussionUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDifussionUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D281B4BC293D1ACF005D0F96 /* Text2Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text2Image.swift; sourceTree = "<group>"; };
 		D2C2BF5D293E580500786D8B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D2C2BF61293FA64C00786D8B /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,7 @@
 				D276EE88293DFB9E005A6DFC /* coreml-stable-diffusion-2-base_split_einsum_compiled */,
 				D281B48C293D1A39005D0F96 /* StableDifussionUIApp.swift */,
 				D281B493293D1A39005D0F96 /* ContentView.swift */,
+				D2C2BF61293FA64C00786D8B /* ListItem.swift */,
 				D281B4BC293D1ACF005D0F96 /* Text2Image.swift */,
 				D281B495293D1A3A005D0F96 /* Assets.xcassets */,
 				D281B497293D1A3A005D0F96 /* StableDifussionUI.entitlements */,
@@ -381,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D276EE9B293DFFA9005A6DFC /* StableDifussionUI.xcdatamodeld in Sources */,
+				D2C2BF63293FA64C00786D8B /* ListItem.swift in Sources */,
 				D276EE9C293DFFA9005A6DFC /* StableDifussionUIApp.swift in Sources */,
 				D276EE9D293DFFA9005A6DFC /* Text2Image.swift in Sources */,
 				D276EE9E293DFFA9005A6DFC /* ContentView.swift in Sources */,
@@ -394,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D281B492293D1A39005D0F96 /* StableDifussionUI.xcdatamodeld in Sources */,
+				D2C2BF62293FA64C00786D8B /* ListItem.swift in Sources */,
 				D281B48D293D1A39005D0F96 /* StableDifussionUIApp.swift in Sources */,
 				D281B4BD293D1ACF005D0F96 /* Text2Image.swift in Sources */,
 				D281B494293D1A39005D0F96 /* ContentView.swift in Sources */,
