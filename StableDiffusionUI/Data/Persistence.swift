@@ -1,8 +1,8 @@
 //
 //  Persistence.swift
-//  StableDifussionUI
+//  StableDiffusionUI
 //
-//  Created by Carlos Martinez Medina on 4/12/22.
+//  Created by Carlos Martinez Medina on 14/12/22.
 //
 
 import CoreData
@@ -14,7 +14,7 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Image(context: viewContext)
+            let newItem = ImageDAO(context: viewContext)
             newItem.timestamp = Date()
         }
         do {
@@ -31,7 +31,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "StableDifussionUI")
+        container = NSPersistentContainer(name: "StableDiffusionUI")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

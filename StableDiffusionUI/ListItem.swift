@@ -1,6 +1,6 @@
 //
 //  ListItem.swift
-//  StableDifussionUI
+//  StableDiffusionUI
 //
 //  Created by Carlos Martinez Medina on 6/12/22.
 //
@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ListItem: View {
-    @State var image: SwiftUI.Image
+    @State var image: Image
     @State var name: String
 
-    init(image: Image) {
+    init(image: ImageDAO) {
         self.name = image.prompt ?? ""
 
         let context = CIContext(options: [.useSoftwareRenderer: true])
@@ -19,7 +19,7 @@ struct ListItem: View {
            let ciImage = CIImage(contentsOf: url),
            let cgImage = context.createCGImage(ciImage, from: ciImage.extent)
         {
-            self.image = SwiftUI.Image(decorative: cgImage, scale: 1)
+            self.image = Image(decorative: cgImage, scale: 1)
         } else {
             self.image = .init("")
         }

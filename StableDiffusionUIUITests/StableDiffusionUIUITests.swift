@@ -1,13 +1,13 @@
 //
-//  StableDifussionUIUITests.swift
-//  StableDifussionUIUITests
+//  StableDiffusionUIUITests.swift
+//  StableDiffusionUIUITests
 //
-//  Created by Carlos Martinez Medina on 4/12/22.
+//  Created by Carlos Martinez Medina on 14/12/22.
 //
 
 import XCTest
 
-final class StableDifussionUIUITests: XCTestCase {
+final class StableDiffusionUIUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
