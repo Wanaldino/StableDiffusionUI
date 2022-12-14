@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D281B488293D1A39005D0F96"
-               BuildableName = "StableDifussionUI.app"
-               BlueprintName = "StableDifussionUI"
-               ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+               BlueprintIdentifier = "D2B8394B2949D279007E7A44"
+               BuildableName = "StableDiffusionUI.app"
+               BlueprintName = "StableDiffusionUI"
+               ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -33,10 +33,10 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D281B49E293D1A3A005D0F96"
-               BuildableName = "StableDifussionUITests.xctest"
-               BlueprintName = "StableDifussionUITests"
-               ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+               BlueprintIdentifier = "D2B839612949D27A007E7A44"
+               BuildableName = "StableDiffusionUITests.xctest"
+               BlueprintName = "StableDiffusionUITests"
+               ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,10 +44,10 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D281B4A8293D1A3A005D0F96"
-               BuildableName = "StableDifussionUIUITests.xctest"
-               BlueprintName = "StableDifussionUIUITests"
-               ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+               BlueprintIdentifier = "D2B8396B2949D27A007E7A44"
+               BuildableName = "StableDiffusionUIUITests.xctest"
+               BlueprintName = "StableDiffusionUIUITests"
+               ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,10 +66,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D281B488293D1A39005D0F96"
-            BuildableName = "StableDifussionUI.app"
-            BlueprintName = "StableDifussionUI"
-            ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+            BlueprintIdentifier = "D2B8394B2949D279007E7A44"
+            BuildableName = "StableDiffusionUI.app"
+            BlueprintName = "StableDiffusionUI"
+            ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,15 +83,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D281B488293D1A39005D0F96"
-            BuildableName = "StableDifussionUI.app"
-            BlueprintName = "StableDifussionUI"
-            ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+            BlueprintIdentifier = "D2B8394B2949D279007E7A44"
+            BuildableName = "StableDiffusionUI.app"
+            BlueprintName = "StableDiffusionUI"
+            ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

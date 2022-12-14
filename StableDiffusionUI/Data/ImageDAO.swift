@@ -1,14 +1,14 @@
 //
-//  Item.swift
-//  StableDifussionUI
+//  ImageDAO.swift
+//  StableDiffusionUI
 //
-//  Created by Carlos Martinez Medina on 5/12/22.
+//  Created by Carlos Martinez Medina on 14/12/22.
 //
 
 import Foundation
 import CoreData
 
-extension Image {
+extension ImageDAO {
     convenience init(
         seed: String,
         prompt: String,

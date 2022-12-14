@@ -91,4 +91,5 @@ iOSInjectionProject/
 
 #model
 coreml-stable-diffusion-2-base_split_einsum_compiled/
-StableDifussionUI.xcodeproj/project.xcworkspace/xcshareddata/
+
+.DS_Store

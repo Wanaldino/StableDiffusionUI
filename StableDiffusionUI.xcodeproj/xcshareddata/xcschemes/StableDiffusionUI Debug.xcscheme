@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D276EE97293DFFA9005A6DFC"
-               BuildableName = "StableDifussionUI Debug.app"
-               BlueprintName = "StableDifussionUI Debug"
-               ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+               BlueprintIdentifier = "D2B839982949D51D007E7A44"
+               BuildableName = "StableDiffusionUI Debug.app"
+               BlueprintName = "StableDiffusionUI Debug"
+               ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,15 +44,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D276EE97293DFFA9005A6DFC"
-            BuildableName = "StableDifussionUI Debug.app"
-            BlueprintName = "StableDifussionUI Debug"
-            ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+            BlueprintIdentifier = "D2B839982949D51D007E7A44"
+            BuildableName = "StableDiffusionUI Debug.app"
+            BlueprintName = "StableDiffusionUI Debug"
+            ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D276EE97293DFFA9005A6DFC"
-            BuildableName = "StableDifussionUI Debug.app"
-            BlueprintName = "StableDifussionUI Debug"
-            ReferencedContainer = "container:StableDifussionUI.xcodeproj">
+            BlueprintIdentifier = "D2B839982949D51D007E7A44"
+            BuildableName = "StableDiffusionUI Debug.app"
+            BlueprintName = "StableDiffusionUI Debug"
+            ReferencedContainer = "container:StableDiffusionUI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -72,7 +72,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

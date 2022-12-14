@@ -1,6 +1,6 @@
 //
 //  Text2Image.swift
-//  StableDifussionUI
+//  StableDiffusionUI
 //
 //  Created by Carlos Martinez Medina on 4/12/22.
 //
@@ -14,7 +14,7 @@ struct Text2Image: View {
     let pipeline: StableDiffusionPipeline?
 
     //Generated image
-    @State var imageUI: SwiftUI.Image
+    @State var imageUI: Image
 
     //Image promp
     @State var prompt: String
@@ -52,7 +52,7 @@ struct Text2Image: View {
         self.imageUI = .init("")
     }
 
-    init(pipeline: StableDiffusionPipeline?, image: Image) {
+    init(pipeline: StableDiffusionPipeline?, image: ImageDAO) {
         self.pipeline = pipeline
         self.save = { _, _, _, _, _, _ in }
 
@@ -70,7 +70,7 @@ struct Text2Image: View {
            let ciImage = CIImage(contentsOf: url),
            let cgImage = context.createCGImage(ciImage, from: ciImage.extent)
         {
-            self.imageUI = SwiftUI.Image(decorative: cgImage, scale: 1)
+            self.imageUI = Image(decorative: cgImage, scale: 1)
         } else {
             self.imageUI = .init("")
         }
@@ -78,9 +78,6 @@ struct Text2Image: View {
 
     var body: some View {
         VStack {
-//            if let image {
-//                SwiftUI.Image(decorative: image, scale: 1)
-//            }
             imageUI
 
             HStack {
@@ -173,7 +170,7 @@ struct Text2Image: View {
         currentStep = progress.step
         self.progress = Double(progress.step) / Double(progress.stepCount)
         guard let currentImage = progress.currentImages.compactMap({ $0 }).first else { fatalError() }
-        imageUI = SwiftUI.Image(decorative: currentImage, scale: 1)
+        imageUI = Image(decorative: currentImage, scale: 1)
         return true
     }
 }
