@@ -48,10 +48,11 @@ struct ContentView: View {
         }
     }
 
-    func handleCreation(prompt: String, seed: String, steps: Int16, guidanceScale: Float, url: URL, id: UUID) {
+    func handleCreation(prompt: String, negativePrompt: String, seed: String, steps: Int16, guidanceScale: Float, url: URL, id: UUID) {
         let image = ImageDAO(
             seed: seed,
             prompt: prompt,
+            negativePrompt: negativePrompt,
             steps: steps,
             guidanceScale: guidanceScale,
             url: url,

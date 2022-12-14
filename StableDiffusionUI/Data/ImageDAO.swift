@@ -12,6 +12,7 @@ extension ImageDAO {
     convenience init(
         seed: String,
         prompt: String,
+        negativePrompt: String,
         steps: Int16,
         guidanceScale: Float,
         url: URL?,
@@ -26,6 +27,7 @@ extension ImageDAO {
         self.timestamp = timestamp
         self.seed = seed
         self.prompt = prompt
+        self.negativePrompt = negativePrompt
         self.steps = steps
         self.guidanceScale = guidanceScale
         self.isFinished = isFinished

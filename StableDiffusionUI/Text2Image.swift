@@ -8,7 +8,7 @@
 import SwiftUI
 import StableDiffusion
 
-typealias Save = (_ prompt: String, _ seed: String, _ steps: Int16, _ guidanceScale: Float, _ url: URL, _ id: UUID) -> Void
+typealias Save = (_ prompt: String, _ negativePrompt: String, _ seed: String, _ steps: Int16, _ guidanceScale: Float, _ url: URL, _ id: UUID) -> Void
 
 struct Text2Image: View {
     let pipeline: StableDiffusionPipeline?
@@ -18,6 +18,9 @@ struct Text2Image: View {
 
     //Image promp
     @State var prompt: String
+
+    //Image negative promp
+    @State var negativePrompt: String
 
     @State var imageCount: Double = 1
     let imageCountMin = 1.0
@@ -46,6 +49,7 @@ struct Text2Image: View {
         self.save = save
 
         self.prompt = ""
+        self.negativePrompt = ""
         self.seed = ""
         self.guidanceScale = 7.5
         self.steps = 18
@@ -54,13 +58,19 @@ struct Text2Image: View {
 
     init(pipeline: StableDiffusionPipeline?, image: ImageDAO) {
         self.pipeline = pipeline
-        self.save = { _, _, _, _, _, _ in }
+        self.save = { _, _, _, _, _, _, _ in }
 
         if let prompt = image.prompt {
             self.prompt = prompt
         } else {
             self.prompt = "Unable to restore prompt"
         }
+        if let prompt = image.negativePrompt {
+            self.negativePrompt = prompt
+        } else {
+            self.negativePrompt = "Unable to restore prompt"
+        }
+
         self.seed = image.seed ?? ""
         self.guidanceScale = image.guidanceScale
         self.steps = Double(image.steps)
@@ -81,11 +91,19 @@ struct Text2Image: View {
             imageUI
 
             HStack {
-                TextField(text: $prompt) {
-                    Text("Prompt: a high quality photo of an astronaut riding a dragon in space")
-                }.onSubmit {
-                    guard !isInProgress else { return }
-                    generate()
+                VStack {
+                    TextField(text: $prompt) {
+                        Text("Prompt: a high quality photo of an astronaut riding a dragon in space")
+                    }.onSubmit {
+                        guard !isInProgress else { return }
+                        generate()
+                    }
+                    TextField(text: $negativePrompt) {
+                        Text("Negative prompt: bad quality")
+                    }.onSubmit {
+                        guard !isInProgress else { return }
+                        generate()
+                    }
                 }
                 Button("Generate") {
                     generate()
@@ -116,7 +134,12 @@ struct Text2Image: View {
                 Text(String(format: "%.1f", guidanceScaleMax)).padding(.all, 8)
             }
 
-            TextField("Seed", text: $seed)
+            TextField(text: $seed) {
+                Text("Seed")
+            }.onSubmit {
+                guard !isInProgress else { return }
+                generate()
+            }
 
             if isInProgress {
                 ProgressView(value: progress) {
@@ -141,6 +164,7 @@ struct Text2Image: View {
             isInProgress = true
             let image = try? pipeline?.generateImages(
                 prompt: prompt,
+                negativePrompt: negativePrompt,
                 imageCount: Int(imageCount),
                 stepCount: Int(steps),
                 seed: seed,
@@ -162,7 +186,7 @@ struct Text2Image: View {
             }
             try? data.write(to: url)
 
-            save(prompt, seed.description, Int16(steps), guidanceScale, url, id)
+            save(prompt, negativePrompt, seed.description, Int16(steps), guidanceScale, url, id)
         }
     }
 
