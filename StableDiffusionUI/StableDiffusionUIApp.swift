@@ -1,14 +1,14 @@
 //
-//  StableDifussionUIApp.swift
-//  StableDifussionUI
+//  StableDiffusionUIApp.swift
+//  StableDiffusionUI
 //
-//  Created by Carlos Martinez Medina on 4/12/22.
+//  Created by Carlos Martinez Medina on 14/12/22.
 //
 
 import SwiftUI
 
 @main
-struct StableDifussionUIApp: App {
+struct StableDiffusionUIApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

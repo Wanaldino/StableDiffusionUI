@@ -1,20 +1,20 @@
 //
 //  ContentView.swift
-//  StableDifussionUI
+//  StableDiffusionUI
 //
-//  Created by Carlos Martinez Medina on 4/12/22.
+//  Created by Carlos Martinez Medina on 14/12/22.
 //
 
 import SwiftUI
-import StableDiffusion
-import CoreML
 import CoreData
+import CoreML
+import StableDiffusion
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Image.timestamp, ascending: false)], animation: .default)
-    private var items: FetchedResults<Image>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \ImageDAO.timestamp, ascending: false)], animation: .default)
+    private var items: FetchedResults<ImageDAO>
     var newImage: Image?
 
     let pipeline: StableDiffusionPipeline?
@@ -49,7 +49,7 @@ struct ContentView: View {
     }
 
     func handleCreation(prompt: String, seed: String, steps: Int16, guidanceScale: Float, url: URL, id: UUID) {
-        let image = Image(
+        let image = ImageDAO(
             seed: seed,
             prompt: prompt,
             steps: steps,
